@@ -19,11 +19,10 @@ def homework01():
         int(input("Введите количество элементов первого множества:")))]
     lst2 = [random.randint(0, 30) for _ in range(
         int(input("Введите количество элементов второго мнжэества:")))]
-    res = list(set(lst).union(set(lst2)))
+    res = list(set(lst).intersection(set(lst2)))
     print(lst)
     print(lst2)
     print(res)
-
 
 # Задача 24: В фермерском хозяйстве в Карелии выращивают чернику. Она растет на
 # круглой грядке, причем кусты высажены только по окружности. Таким образом, у
