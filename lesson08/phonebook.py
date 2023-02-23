@@ -40,6 +40,13 @@ class phonebook:
     def get(self, recordId: int):
         return [item for item in self.recordList if item["id"] == recordId][0]
 
+    def subs(self, record: dict, substr):
+        return len([value for key, value in record.items() if substr in str(value)]) > 0
+
+    def search(self, substr: str):
+        return list(filter(
+            lambda record: len([value for key, value in record.items() if substr in str(value)]) > 0, self.recordList))
+
     def editRecord(self, record):
         self.recordList.remove(
             [item for item in self.recordList if item['id'] == record['id']][0])

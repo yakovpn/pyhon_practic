@@ -37,6 +37,11 @@ def editRecord():
     return True
 
 
+def searchRecord():
+    substr = input("Input search string:")
+    print(*pb.search(substr), sep='\n')
+    return True
+
 def savePhonebook():
     pb.saveToFile()
     return True
@@ -47,12 +52,13 @@ def exitFunc():
 
 
 menuDict = {
-    1: {"description": "List all recorde", "func": listRecordsAll},
+    1: {"description": "List all record", "func": listRecordsAll},
     2: {"description": "Add new record", "func": addRecord},
     3: {"description": "Remove record", "func": removeRecord},
     4: {"description": "Edit record", "func": editRecord},
     5: {"description": "Save phonebook", "func": savePhonebook},
-    6: {"description": "Exit", "func": exitFunc},
+    6: {"description": "Search record", "func": searchRecord},
+    7: {"description": "Exit", "func": exitFunc},
 }
 
 play = True
